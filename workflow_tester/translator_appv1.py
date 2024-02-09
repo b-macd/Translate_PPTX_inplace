@@ -12,15 +12,6 @@ st.title('Powerpoint Translator')
 
 uploaded_file = st.file_uploader('upload your powerpoint file here')
 
-def translation_pipeline(original_text):
-    model_name = 'Helsinki-NLP/opus-mt-ar-en'
-    model = MarianMTModel.from_pretrained(model_name)
-    tokenizer = AutoTokenizer.from_pretrained(model_name)
-    batch = tokenizer([original_text], return_tensors= 'pt')
-    generated_ids = model.generate(**batch)
-    translated_text = tokenizer.batch_decode(generated_ids, skipped_special_tokens=True)[0]
-    return translated_text
-
 if uploaded_file:
    filename = st.write("Filename: ", uploaded_file.name)
    out_name = uploaded_file.name.replace('.pptx', '')

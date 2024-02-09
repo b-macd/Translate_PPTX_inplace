@@ -4,9 +4,10 @@ This app lets you load an Arabic language Powerpoint file and then runs the slid
 
 Upon completion you will be given the option to download the newly translated file.
 
-## Running the app locally:
+## Running the app locally
+
 * clone repository to your local machine
 * open a terminal and navigate to the Translate_PPTX_inplace directory
 * run the following commands:
   * pip install -r requirements.txt
-  * streamlit run translator_app.py
+  * streamlit run app/translator_app.py

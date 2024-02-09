@@ -2,3 +2,5 @@ streamlit
 python-pptx
 transformers
 torch
+sentencepiece
+sacremoses

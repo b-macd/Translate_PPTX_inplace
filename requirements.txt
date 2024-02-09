@@ -1,4 +1,3 @@
 streamlit
 python-pptx
 transformers
-io

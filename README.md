@@ -7,5 +7,6 @@ Upon completion you will be given the option to download the newly translated fi
 ## Running the app locally:
 * clone repository to your local machine
 * open a terminal and navigate to the Translate_PPTX_inplace directory
-* pip install requirements.txt
-* run the following command: streamlit run translator_app.py
+* run the following commands:
+** pip install -r requirements.txt
+** streamlit run translator_app.py

@@ -19,11 +19,21 @@ if uploaded_file:
     else:
         st.error('Please upload a Powerpoint file ending in .pptx')
 
+Languages = {'arabic':'ar','english':'en', 'placeholder':'none'}
+
+option1 = st.selectbox('Input language',
+                      ('arabic', 'placeholder'))
+option2 = st.selectbox('Output language',
+                       ('english', 'placeholder'))
+
+value1 = Languages[option1]
+value2 = Languages[option2]
+
 if st.button('Translate powerpoint'):
         
     # Instantiate translation pipeline
     def translation_pipeline(original_text):
-        model_name = 'Helsinki-NLP/opus-mt-ar-en'
+        model_name = f"Helsinki-NLP/opus-mt-{value1}-{value2}"
         model = MarianMTModel.from_pretrained(model_name)
         tokenizer = AutoTokenizer.from_pretrained(model_name)
         batch = tokenizer([original_text], return_tensors= 'pt')

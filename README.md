@@ -16,3 +16,5 @@ Upon completion you will be given the option to download the newly translated fi
 
 If you want to run the same or different models on the local drive with this app, you will have to download the model and all of its config files to the same directory as this project and rename the variable `model_name` in the `translator_app_local_model_v1.py` file to match the relative filepath to the model folder.
 
+The files for the model that I am using as the translator in this app can be located at this link: https://huggingface.co/Helsinki-NLP/opus-mt-ar-en/tree/main
+

@@ -6,7 +6,6 @@ from io import BytesIO
 
 st.set_page_config(page_title='Powerpoint Translator', layout='wide', initial_sidebar_state='expanded')
 
-
 st.image('./icons/IDSG.jpeg', width=140)
 st.title('Powerpoint Translator')
 st.write('This translator only supports Arabic to English at this time. More languages will be added.')

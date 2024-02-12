@@ -1,6 +1,5 @@
 import streamlit as st
 from pptx import Presentation
-from pptx.enum.text import MSO_AUTO_SIZE
 from transformers import MarianMTModel, AutoTokenizer
 from io import BytesIO
 
@@ -10,7 +9,6 @@ st.set_page_config(page_title='Powerpoint Translator', layout='wide', initial_si
 st.image('./icons/IDSG.jpeg', width=140)
 st.title('Powerpoint Translator')
 st.write('This translator only supports Arabic to English at this time. More languages will be added.')
-
 
 uploaded_file = st.file_uploader('upload your powerpoint file here')
 

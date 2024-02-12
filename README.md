@@ -18,3 +18,6 @@ If you want to run the same or different models on the local drive with this app
 
 The files for the model that I am using as the translator in this app can be located at this link: https://huggingface.co/Helsinki-NLP/opus-mt-ar-en/tree/main
 
+## Screenshot example of app in action:
+
+![Screenshot example of app in action](app_screenshot/screenshot.png)

@@ -6,6 +6,23 @@ from io import BytesIO
 
 st.set_page_config(page_title='Powerpoint Translator', layout='wide', initial_sidebar_state='expanded')
 
+footer="""<style>
+.footer {
+position: fixed;
+left: 0;
+bottom: 0;
+width: 100%;
+background-color: transparent;
+color: grey;
+text-align: center;
+}
+</style>
+<div class="footer">
+<p>Developed by Ben MacDonald
+</div>
+"""
+st.markdown(footer,unsafe_allow_html=True)
+
 st.image('./icons/IDSG.jpeg', width=140)
 st.title('Powerpoint Translator')
 st.write('This translator only supports Arabic to English at this time. More languages will be added.')
@@ -36,7 +53,7 @@ if st.button('Translate powerpoint'):
         model_name = f"Helsinki-NLP/opus-mt-{value1}-{value2}"
         model = MarianMTModel.from_pretrained(model_name)
         tokenizer = AutoTokenizer.from_pretrained(model_name)
-        batch = tokenizer([original_text], return_tensors= 'pt')
+        batch = tokenizer([original_text],padding=True,truncation=True, return_tensors= 'pt')
         generated_ids = model.generate(**batch)
         translated_text = tokenizer.batch_decode(generated_ids, skip_special_tokens=True)[0]
         return translated_text

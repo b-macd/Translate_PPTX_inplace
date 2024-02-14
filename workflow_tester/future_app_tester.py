@@ -3,14 +3,30 @@ from pptx import Presentation
 from transformers import pipeline
 from io import BytesIO
 
-
 st.set_page_config(page_title='Powerpoint Translator', layout='wide', initial_sidebar_state='expanded')
+
+footer="""<style>
+.footer {
+position: fixed;
+left: 0;
+bottom: 0;
+width: 100%;
+background-color: transparent;
+color: grey;
+text-align: center;
+}
+</style>
+<div class="footer">
+<p>Developed by Ben MacDonald
+</div>
+"""
+st.markdown(footer,unsafe_allow_html=True)
 
 st.image('./icons/IDSG.jpeg', width=140)
 st.title('Powerpoint Translator')
 st.write('This translator only supports Arabic to English at this time. More languages will be added.')
 
-uploaded_file = st.file_uploader('upload your powerpoint file here')
+uploaded_file = st.file_uploader('Upload your powerpoint file here')
 
 if uploaded_file:
     if '.pptx' in uploaded_file.name:
@@ -80,8 +96,6 @@ if st.button('Translate powerpoint'):
 
     st.success('Your Powerpoint file has been translated')
     st.download_button(label='Click to download PowerPoint',data=binary_output.getvalue(),file_name=f'{out_name}-translated.pptx')
-
-
 
  
  
